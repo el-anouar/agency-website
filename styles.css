@@ -1723,12 +1723,12 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 .animateOpenNavMobileHolder {
   display: flex;
-  animation: animateOpenNavMobileHolder 0.5s ease-in forwards;
+  animation: animateOpenNavMobileHolder 0.3s ease-in forwards;
 
 }
 
 .animateCloseNavMobileHolder {
-  animation: animateCloseNavMobileHolder 0.5s ease-in forwards;
+  animation: animateCloseNavMobileHolder 0.3s ease-in forwards;
 }
 
 @keyframes animateOpenNavMobileHolder {
