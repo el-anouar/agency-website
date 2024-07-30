@@ -1,0 +1,17 @@
+/* Light Theme */
+:root.light-theme {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+  }
+  
+  /* Dark Theme */
+  :root.dark-theme {
+    --bg-color: #1f1f1f;
+    --text-color: #ffffff;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
