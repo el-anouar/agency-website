@@ -307,33 +307,23 @@ function endDrag() {
 }
 
 window.addEventListener("resize", handleResize);
-let windowWidth = window.innerWidth;
+
 let windowWidth769 = false;
 function handleResize() {
+  theThirdTitle.style.height="0px"
+  theSecondTitle.style.height="0px"
   container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px)`;
   slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px)`;
-  const borderRadius = 20; //should be an even number
+  const borderRadius = 20
   const innerShapeMargin = 20;
   const tCBorderRadius = 30;
-  // Calculate the effective window width considering pixel density
-  windowWidth = window.innerWidth;
-  //alert("pixelratio "+pixelRatio+" windowWidth "+windowWidth)
-  let theThirdTitleFontSize = 90;
-  let theThirdTitleHeight = "auto";
-  let thesecondTitleHeight = "auto";
-  let thesecondTitleFontSize = 90;
-  let theFirstitleFontSize = 15;
+  let windowWidth = window.screen.width;
   let theFirstTitleMaxWidth = 300;
   let theFirstTitleButtWidth = 50;
   let theFirstTitleButtHeight = 50;
   let removeFirstTitle = false;
   let theFirstTitleDivHeight = 100;
   if (windowWidth < 1024 * pixelRatio) {
-    theThirdTitleFontSize = 80;
-    theThirdTitleHeight = "auto";
-    thesecondTitleFontSize = 80;
-    thesecondTitleHeight = "auto";
-    theFirstitleFontSize = 10;
     theFirstTitleMaxWidth = 200;
     theFirstTitleButtWidth = 40;
     theFirstTitleButtHeight = 40;
@@ -341,11 +331,6 @@ function handleResize() {
     theFirstTitleDivHeight = 90;
   }
   if (windowWidth < 769 * pixelRatio) {
-    theThirdTitleFontSize = 60;
-    theThirdTitleHeight = "auto";
-    thesecondTitleFontSize = 60;
-    thesecondTitleHeight = "auto";
-    theFirstitleFontSize = 10;
     theFirstTitleMaxWidth = 200;
     theFirstTitleButtWidth = 30;
     theFirstTitleButtHeight = 30;
@@ -353,39 +338,33 @@ function handleResize() {
     theFirstTitleDivHeight = 70;
     container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px)`;
     slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px)`;
-    //aboutCardHolder.style.width="80%"
     windowWidth769 = true;
   } else {
     container.style.height = `calc(100vh)`;
     slider.style.height = `calc(99.5vh)`;
-    //aboutCardHolder.style.width="350px"
     windowWidth769 = false;
   }
-  if (windowWidth < 601 * pixelRatio) {
-    theThirdTitleFontSize = 30;
-    theThirdTitleHeight = 30;
-    thesecondTitleFontSize = 30;
-    thesecondTitleHeight = 30;
+  if (windowWidth < 769 * pixelRatio) {
     removeFirstTitle = true;
     container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px)`;
     slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px)`;
   }
-
+  console.log(windowWidth ,"<" ,769 * pixelRatio,pixelRatio)
   ///////////////////////////////////////////////////////////////////
 
   svg.setAttribute("width", container.clientWidth);
   svg.setAttribute("height", container.clientHeight);
   const path = document.getElementById("svgPath");
-
   theThirdTitle.style.bottom = `${innerShapeMargin}px`; // Adjust as needed
-  theThirdTitle.style.fontSize = `${theThirdTitleFontSize}px`; // Adjust as needed
   theThirdTitle.style.left = `${innerShapeMargin}px`; // Adjust as needed
-  theThirdTitle.style.height = `${theThirdTitleHeight === "auto" ? "auto" : theThirdTitleHeight + "px"
-    }`;
   theThirdTitle.style.width = `auto`;
-  theThirdTitle.style.padding = `${0}px ${tCBorderRadius}px ${0}px ${0}px`;
-  let theThirdW = parseInt(theThirdTitle.offsetWidth);
-  let theThirdH = parseInt(theThirdTitle.offsetHeight);
+  theThirdTitle.style.height = `auto`;
+  theThirdTitle.style.padding = `${5}px ${tCBorderRadius}px ${5}px ${0}px`;
+
+
+  let theThirdW = parseFloat(theThirdTitle.offsetWidth);
+  let theThirdH = parseFloat(theThirdTitle.offsetHeight);
+
   theThirdTitle.style.width = `${theThirdW + 1}px`; // Adjust as needed
   theThirdTitle.style.height = `${theThirdH}px`; // Adjust as needed
   let theThirdTitleWidth = theThirdW + tCBorderRadius;
@@ -397,17 +376,14 @@ function handleResize() {
   }
 
   theSecondTitle.style.bottom = `${innerShapeMargin + theThirdH}px`; // Adjust as needed
-  theSecondTitle.style.fontSize = `${thesecondTitleFontSize}px`; // Adjust as needed
   theSecondTitle.style.left = `${innerShapeMargin}px`; // Adjust as needed
 
-  theSecondTitle.style.padding = `${0}px ${tCBorderRadius}px ${0}px ${0}px`;
-
-  theSecondTitle.style.height = `${thesecondTitleHeight === "auto" ? "auto" : theThirdTitleHeight + "px"
-    }`;
+  theSecondTitle.style.padding = `${5}px ${tCBorderRadius}px ${5}px ${0}px`;
   theSecondTitle.style.width = `auto`;
-
+  theSecondTitle.style.height = `auto`;
   let theSecondW = parseFloat(theSecondTitle.offsetWidth);
   let theSecondH = parseFloat(theSecondTitle.offsetHeight);
+
 
   theSecondTitle.style.width = `${theSecondW + 1}px`; // Adjust as needed
   theSecondTitle.style.height = `${theSecondH}px`; // Adjust as needed
@@ -420,7 +396,7 @@ function handleResize() {
     theSecondTitle.style.height = `${theSecondH}px`;
   }
 
-  theFirstTitle.style.fontSize = `${theFirstitleFontSize}px`;
+  //theFirstTitle.style.fontSize = `${theFirstitleFontSize}px`;
   theFirstTitle.style.display = `${removeFirstTitle ? "none" : "flex"}`;
   theFirstTitle.style.alignItems = `center`;
   theFirstTitle.style.maxWidth = `${theFirstTitleMaxWidth}px`;
@@ -521,146 +497,20 @@ function handleResize() {
     { L: { x: 0, y: container.clientHeight } },
     { L: { x: 0, y: 0 } },
     { Z: "" },
-    { M: { x: innerShapeMargin + borderRadius, y: innerShapeMargin } },
-    {
-      L: {
-        x: container.clientWidth - innerShapeMargin - borderRadius,
-        y: innerShapeMargin,
-      },
-    },
-    {
-      Q: {
-        x1: container.clientWidth - innerShapeMargin,
-        y1: innerShapeMargin,
-        x: container.clientWidth - innerShapeMargin,
-        y: innerShapeMargin + borderRadius,
-      },
-    },
-    {
-      L: {
-        x: container.clientWidth - innerShapeMargin,
-        y: container.clientHeight - innerShapeMargin - borderRadius,
-      },
-    },
-    {
-      Q: {
-        x1: container.clientWidth - innerShapeMargin,
-        y1: container.clientHeight - innerShapeMargin,
-        x: container.clientWidth - innerShapeMargin - borderRadius,
-        y: container.clientHeight - innerShapeMargin,
-      },
-    },
-    {
-      L: {
-        x: innerShapeMargin + theThirdTitleWidth,
-        y: container.clientHeight - innerShapeMargin,
-      },
-    },
-
-    {
-      Q: {
-        x1: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,
-        y1: container.clientHeight - innerShapeMargin,
-        x: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,
-        y: container.clientHeight - innerShapeMargin - tCBorderRadius,
-      },
-    },
-    {
-      L: {
-        x: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,
-        y:
-          container.clientHeight -
-          innerShapeMargin -
-          borderRadius -
-          theThirdTRectSideHight,
-      },
-    },
-    {
-      Q: {
-        x1: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,
-        y1:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius,
-        x: innerShapeMargin + theThirdTitleWidth - 2 * tCBorderRadius,
-        y:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius,
-      },
-    },
-    {
-      L: {
-        x: innerShapeMargin + theSecondTitleWidth,
-        y:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius,
-      },
-    },
+    { M: { x: innerShapeMargin + borderRadius, y: innerShapeMargin }},
+    {L: {x: container.clientWidth - innerShapeMargin - borderRadius,y: innerShapeMargin,},},
+    {Q: {x1: container.clientWidth - innerShapeMargin,y1: innerShapeMargin,x: container.clientWidth - innerShapeMargin,y: innerShapeMargin + borderRadius,},},
+    {L: {x: container.clientWidth - innerShapeMargin,y: container.clientHeight - innerShapeMargin - borderRadius,},},
+    {Q: {x1: container.clientWidth - innerShapeMargin,y1: container.clientHeight - innerShapeMargin,x: container.clientWidth - innerShapeMargin - borderRadius,y: container.clientHeight - innerShapeMargin,},},
+    {L: {x: innerShapeMargin + theThirdTitleWidth,y: container.clientHeight - innerShapeMargin,},},
+    {Q: {x1: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,y1: container.clientHeight - innerShapeMargin,x: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,y: container.clientHeight - innerShapeMargin - tCBorderRadius,},},
+    {L: {x: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,y:container.clientHeight -innerShapeMargin -borderRadius -theThirdTRectSideHight,},},
+    {Q: {x1: innerShapeMargin + theThirdTitleWidth - tCBorderRadius,y1:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius,x: innerShapeMargin + theThirdTitleWidth - 2 * tCBorderRadius,y:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius,},},
+    {L: {x: innerShapeMargin + theSecondTitleWidth,y:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius,},},
     /////////////
-    {
-      Q: {
-        x1: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,
-        y1:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius,
-        x: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,
-        y:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius -
-          tCBorderRadius,
-      },
-    },
-    {
-      L: {
-        x: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,
-        y:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius -
-          tCBorderRadius -
-          theSecondTRectSideHight,
-      },
-    },
-    {
-      Q: {
-        x1: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,
-        y1:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius -
-          tCBorderRadius -
-          theSecondTRectSideHight -
-          tCBorderRadius,
-        x: innerShapeMargin + theSecondTitleWidth - 2 * tCBorderRadius,
-        y:
-          container.clientHeight -
-          innerShapeMargin -
-          tCBorderRadius -
-          theThirdTRectSideHight -
-          tCBorderRadius -
-          tCBorderRadius -
-          theSecondTRectSideHight -
-          tCBorderRadius,
-      },
-    },
+    {Q: {x1: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,y1:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius,x: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,y:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius -tCBorderRadius,},},
+    {L: {x: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,y:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius -tCBorderRadius -theSecondTRectSideHight,},},
+    {Q: {x1: innerShapeMargin + theSecondTitleWidth - tCBorderRadius,y1:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius -tCBorderRadius -theSecondTRectSideHight -tCBorderRadius,x: innerShapeMargin + theSecondTitleWidth - 2 * tCBorderRadius,y:container.clientHeight -innerShapeMargin -tCBorderRadius -theThirdTRectSideHight -tCBorderRadius -tCBorderRadius -theSecondTRectSideHight -tCBorderRadius,},},
   ];
   if (removeFirstTitle) {
     points.push(

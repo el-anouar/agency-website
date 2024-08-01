@@ -196,6 +196,7 @@ button {
   color: var(--theFirstTitleColor);
   font-weight: lighter;
   align-items: center;
+  font-size: 15px;
 
 }
 
@@ -222,6 +223,7 @@ button {
   font-weight: bold;
   display: flex;
   align-items: center;
+  font-size: 90px;
 
 }
 
@@ -231,6 +233,7 @@ button {
   font-weight: bold;
   display: flex;
   align-items: center;
+  font-size: 90px;
 }
 
 .letUsWork {
@@ -2142,7 +2145,15 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   #prev-btn {
     top: 220px;
   }
+  .theFirstTitle{
 
+  }
+  .theSecondTitle{
+    font-size: 30px;
+  }
+  .theThirdTitle{
+    font-size: 30px;
+  }
 
 }
 @media (min-width: 601px) and (max-width: 768px) {
@@ -2217,6 +2228,15 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   h1>i {
     bottom: calc(50% - 30px);
   }
+  .theFirstTitle{
+    font-size: 10px;
+  }
+  .theSecondTitle{
+    font-size: 50px;
+  }
+  .theThirdTitle{
+    font-size: 50px;
+  }
 }
 
 
@@ -2287,6 +2307,15 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
   h1>i {
     bottom: calc(50% - 30px);
+  }
+  .theFirstTitle{
+    font-size: 10px;
+  }
+  .theSecondTitle{
+    font-size: 70px;
+  }
+  .theThirdTitle{
+    font-size: 70px;
   }
 }
 

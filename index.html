@@ -563,7 +563,52 @@
   </footer>
   <script src="theScript.js"></script>
 
+  <!--<canvas id="myCanvas" width="809" height="667" style="border:1px solid #000000;"></canvas>-->
+  <!--<script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    // Draw the outer path (black)
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(809, 0);
+    ctx.lineTo(809, 667);
+    ctx.lineTo(0, 667);
+    ctx.closePath();
+    ctx.fillStyle = 'black'; // Fill color for the outer path
+    ctx.fill();
 
+    // Set up to punch out the inner path
+    ctx.globalCompositeOperation = 'destination-out'; // Change drawing mode
+
+    // Draw the inner path (transparent cutout)
+    ctx.beginPath();
+    ctx.moveTo(40, 20);
+    ctx.lineTo(769, 20);
+    ctx.quadraticCurveTo(789, 20, 789, 40);
+    ctx.lineTo(789, 627);
+    ctx.quadraticCurveTo(789, 647, 769, 647);
+    ctx.lineTo(760, 647);
+    ctx.quadraticCurveTo(730, 647, 730, 617);
+    ctx.lineTo(730, 597);
+    ctx.quadraticCurveTo(730, 557, 700, 557);
+    ctx.lineTo(467, 557);
+    ctx.quadraticCurveTo(437, 557, 437, 527);
+    ctx.lineTo(437, 497);
+    ctx.quadraticCurveTo(437, 467, 407, 467);
+    ctx.lineTo(310, 467);
+    ctx.quadraticCurveTo(280, 467, 280, 437);
+    ctx.lineTo(280, 407);
+    ctx.quadraticCurveTo(280, 377, 250, 377);
+    ctx.lineTo(40, 377);
+    ctx.quadraticCurveTo(20, 377, 20, 357);
+    ctx.lineTo(20, 40);
+    ctx.quadraticCurveTo(20, 20, 40, 20);
+    ctx.closePath();
+    ctx.fill(); // Use fill to cut out the inner path
+
+    // Reset the composite operation
+    ctx.globalCompositeOperation = 'source-over';
+  </script>-->
 </body>
 
 </html>
