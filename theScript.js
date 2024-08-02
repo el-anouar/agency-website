@@ -1070,11 +1070,9 @@ document.addEventListener("scroll", function () {
 
   if (scrollPosition > 10) {
     navDesktop1.classList.add("scrolled");
-    navDesktopLogo.classList.add("scrolled10");
     navDesktop2.classList.add("scrolled");
   } else {
     navDesktop1.classList.remove("scrolled");
-    navDesktopLogo.classList.remove("scrolled10");
     navDesktop2.classList.remove("scrolled");
   }
   if (
@@ -1102,3 +1100,18 @@ document.addEventListener("scroll", function () {
   }
   // Log the y-axis position
 });
+        // Add an event listener to all links
+        document.querySelectorAll('.navMobileListItem a').forEach(link => {
+          link.addEventListener('click', function(event) {
+              // Prevent default action
+              event.preventDefault();
+
+              // Remove 'active' class from all items
+              document.querySelectorAll('.navMobileListItem a').forEach(item => {
+                  item.classList.remove('active');
+              });
+
+              // Add 'active' class to the parent of the clicked link
+              this.classList.add('active');
+          });
+      });

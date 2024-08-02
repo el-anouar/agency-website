@@ -63,6 +63,8 @@
   --checkBoxCheckedBg: #1f1f1f;
   --checkBoxCheckedB: #1f1f1f;
   --firstDivPColor: #848484;
+  --navMLIaBg:#1f1f1f;
+  --navMLIaColor:#ffffff;
 }
 
 :root.dark-theme {
@@ -131,6 +133,8 @@
   --checkBoxCheckedBg: #ffffff;
   --checkBoxCheckedB: #ffffff;
   --firstDivPColor: #b5b5b5;
+  --navMLIaBg:#ffffff;
+  --navMLIaColor:#1f1f1f;
 }
 
 :root {
@@ -150,7 +154,7 @@ body {
   margin: auto;
   position: relative;
   width: 100%;
-
+  min-width: 379px;
 }
 
 .container {
@@ -210,7 +214,7 @@ button {
 .theFirstTitleButt {
   border: 1px solid var(--theFirstTitleButtBorderColor);
   color: var(--theFirstTitleButtColor);
-  border-radius:50%;
+  border-radius: 50%;
   font-size: xx-large;
   font-weight: bolder;
   align-items: center;
@@ -1047,7 +1051,7 @@ footer {
   flex-direction: column;
   width: 450px;
   justify-content: flex-start;
-  
+
 }
 
 .firstDiv>p {
@@ -1063,18 +1067,21 @@ footer {
   justify-content: center;
   justify-content: flex-start;
 }
-.secondDiv>ul{
+
+.secondDiv>ul {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
 }
-.secondDiv>ul>li{
+
+.secondDiv>ul>li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
+
 .scfHolder {
   width: 100%;
   display: flex;
@@ -1352,11 +1359,7 @@ button:hover {
   text-shadow: none;
   background-color: none;
   backdrop-filter: none;
-}
-
-.navDesktopLogo.scrolled10 {
-  margin-top: 0;
-
+  justify-content: center;
 }
 
 .navMobileLogo.scrolled {
@@ -1474,14 +1477,14 @@ button:hover {
 .aboutButton {
   background-color: var(--aboutButtonBg);
   color: var(--aboutButtonColor);
-  position:absolute;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:x-large;
-  font-weight:normal;
-  cursor:pointer;
-  box-shadow:0px 0px 30px #0000002b;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: normal;
+  cursor: pointer;
+  box-shadow: 0px 0px 30px #0000002b;
 }
 
 .slider {
@@ -1799,8 +1802,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 
 .navMobileListItem {
-  padding: 15px 0px 15px 0px;
-  margin: 15px;
+
   width: 150px;
   display: flex;
   justify-content: center;
@@ -1808,17 +1810,39 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 }
 
-.navMobileListItem.active {
-  border: 2px solid var(--navMobileListItemActiveB);
-  padding: 15px 0px 15px 0px;
-  margin: 15px;
+.navMobileListItem>a {
+
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: var(--buttonBorderTransColor);
+  cursor: pointer;
   width: 150px;
-  border-radius: 50px;
-  /*box-shadow: 0px 0px 20px #e1e1e1;*/
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
 }
 
 
+.navMobileListItem>a:hover {
 
+  border: none;
+  background-color: #ffbf00;
+  color: white;
+
+}
+.navMobileListItem>a.active {
+
+  border: 2px solid var(--buttonBorderTransB);
+  background-color: var(--navMLIaBg);
+  color: var(--navMLIaColor);
+
+}
+.navMobileListItem>a.active:hover {
+
+  border: 2px solid #ffbf00;;
+  background-color: #ffbf00;
+  color: white;
+}
 
 
 
@@ -2055,22 +2079,68 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 
 @media (max-width: 600px) {
+  .navMobileListItem {
+
+    width: 100%;
+  }
+  .navMobileListItem > a.active {
+    width: 50%;
+  }
+  .navMobileListItem > a {
+    width: 50%;
+  }
+  .navDeskTopDLModOuter,
+  .navMobileDLModOuter {
+
+    height: 20px;
+    width: 40px;
+  }
+
+  .navDeskTopDLModInner,
+  .navMobileDLModInner {
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    font-size: 10px;
+  }
+
+  .navDeskTopDLModOuter>.navDeskTopDLModOuterIcon,
+  .navMobileDLModOuter>.navMobileDLModOuterIcon {
+    font-size: 10px;
+  }
+
   .navDesktop1 {
     display: none;
   }
 
   .navDesktopLogo {
-    margin-left: 40px;
-    margin-top: 40px;
-    flex: 1;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-right: 0px;
+  }
+
+  .navMobileLogo {
+    font-size: 20px;
+  }
+
+  .navDesktopLogo.scrolled {
+
+    justify-content: start;
   }
 
   .navDesktop2 {
     display: flex;
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-left: 0px;
   }
 
   .hamburger {
     display: flex;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
 
   }
 
@@ -2095,9 +2165,11 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     left: calc(5%);
     bottom: calc(50% - 35px);
   }
+
   .contactUsButton {
     display: none;
   }
+
   .scfHolder {
     width: 100%;
   }
@@ -2110,28 +2182,34 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .footerLogo {
     justify-content: start;
   }
-  .firstDiv{
+
+  .firstDiv {
     width: 95%;
     margin-top: 20px;
 
   }
-  .secondDiv{
+
+  .secondDiv {
     width: 95%;
     margin-top: 20px;
   }
+
   .firstDiv>p {
 
     text-align: start;
   }
-  .secondDiv>ul{
+
+  .secondDiv>ul {
     justify-content: start;
     gap: 0px;
   }
-  .secondDiv>ul>li{
+
+  .secondDiv>ul>li {
     justify-content: start;
     width: 80px;
     margin-top: 10px;
   }
+
   h1 {
     font-size: 30px;
   }
@@ -2139,40 +2217,77 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   h1>i {
     bottom: calc(50% - 30px);
   }
+
   #next-btn {
     top: 150px;
   }
+
   #prev-btn {
     top: 220px;
   }
-  .theFirstTitle{
 
-  }
-  .theSecondTitle{
+  .theFirstTitle {}
+
+  .theSecondTitle {
     font-size: 30px;
   }
-  .theThirdTitle{
+
+  .theThirdTitle {
     font-size: 30px;
   }
 
 }
+
 @media (min-width: 601px) and (max-width: 768px) {
+
+  .navDeskTopDLModOuter,
+  .navMobileDLModOuter {
+
+    height: 20px;
+    width: 40px;
+  }
+
+  .navDeskTopDLModInner,
+  .navMobileDLModInner {
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    font-size: 10px;
+  }
+
+  .navDeskTopDLModOuter>.navDeskTopDLModOuterIcon,
+  .navMobileDLModOuter>.navMobileDLModOuterIcon {
+    font-size: 10px;
+  }
+
   .navDesktop1 {
     display: none;
   }
 
   .navDesktopLogo {
-    margin-left: 40px;
-    margin-top: 40px;
-    flex: 1;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-right: 0px;
+  }
+
+  .navDesktopLogo.scrolled {
+
+    justify-content: start;
   }
 
   .navDesktop2 {
     display: flex;
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-left: 0px;
   }
 
   .hamburger {
     display: flex;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
 
   }
 
@@ -2188,6 +2303,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .faq-container {
     width: 90%;
   }
+
   .scfHolder {
     width: 100%;
   }
@@ -2200,27 +2316,33 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .footerLogo {
     justify-content: start;
   }
-  .firstDiv{
+
+  .firstDiv {
     width: 95%;
     margin-top: 20px;
 
   }
-  .secondDiv{
+
+  .secondDiv {
     width: 95%;
     margin-top: 20px;
   }
+
   .firstDiv>p {
 
     text-align: start;
   }
-  .secondDiv>ul{
+
+  .secondDiv>ul {
     justify-content: start;
   }
-  .secondDiv>ul>li{
+
+  .secondDiv>ul>li {
     justify-content: start;
     width: 100px;
     margin-top: 10px;
   }
+
   h1 {
     font-size: 30px;
   }
@@ -2228,13 +2350,16 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   h1>i {
     bottom: calc(50% - 30px);
   }
-  .theFirstTitle{
+
+  .theFirstTitle {
     font-size: 10px;
   }
-  .theSecondTitle{
+
+  .theSecondTitle {
     font-size: 50px;
   }
-  .theThirdTitle{
+
+  .theThirdTitle {
     font-size: 50px;
   }
 }
@@ -2264,6 +2389,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     width: 80%;
 
   }
+
   .scfHolder {
     width: 100%;
   }
@@ -2276,27 +2402,33 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .footerLogo {
     justify-content: start;
   }
-  .firstDiv{
+
+  .firstDiv {
     width: 95%;
     margin-top: 20px;
 
   }
-  .secondDiv{
+
+  .secondDiv {
     width: 95%;
     margin-top: 20px;
   }
+
   .firstDiv>p {
 
     text-align: start;
   }
-  .secondDiv>ul{
+
+  .secondDiv>ul {
     justify-content: start;
   }
-  .secondDiv>ul>li{
+
+  .secondDiv>ul>li {
     justify-content: start;
     width: 100px;
     margin-top: 10px;
   }
+
   .navDesktopLogo.scrolled {
     justify-content: flex-start;
   }
@@ -2308,23 +2440,23 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   h1>i {
     bottom: calc(50% - 30px);
   }
-  .theFirstTitle{
+
+  .theFirstTitle {
     font-size: 10px;
   }
-  .theSecondTitle{
+
+  .theSecondTitle {
     font-size: 70px;
   }
-  .theThirdTitle{
+
+  .theThirdTitle {
     font-size: 70px;
   }
 }
 
 
-@media (min-width: 1025px) {
-
-}
+@media (min-width: 1025px) {}
 
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-
-}
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {}
