@@ -2092,14 +2092,14 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .navDeskTopDLModOuter,
   .navMobileDLModOuter {
 
-    height: 20px;
-    width: 40px;
+    height: 30px;
+    width: 60px;
   }
 
   .navDeskTopDLModInner,
   .navMobileDLModInner {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     border: 1px solid white;
     font-size: 10px;
   }
@@ -2117,6 +2117,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     margin-left: 25px;
     margin-top: 10px;
     margin-right: 0px;
+    font-size: 20px;
   }
 
   .navMobileLogo {
@@ -2242,15 +2243,14 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
   .navDeskTopDLModOuter,
   .navMobileDLModOuter {
-
-    height: 20px;
-    width: 40px;
+    height: 30px;
+    width: 60px;
   }
 
   .navDeskTopDLModInner,
   .navMobileDLModInner {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     border: 1px solid white;
     font-size: 10px;
   }
@@ -2268,6 +2268,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     margin-left: 25px;
     margin-top: 10px;
     margin-right: 0px;
+    font-size: 20px;
   }
 
   .navDesktopLogo.scrolled {
