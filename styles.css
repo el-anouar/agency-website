@@ -263,7 +263,7 @@ button {
   background-color: var(--UnderLetUsWorkBg);
   width: 50px;
   border-radius: 50%;
-  font-size: xx-large;
+  font-size: 20px;
   font-weight: bolder;
   display: flex;
   align-items: center;
