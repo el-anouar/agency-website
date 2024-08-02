@@ -223,9 +223,15 @@ function slidePrev() {
   clientTestimonialCard[tCounter].style.animation =
     "prev2 0.5s ease-in forwards";
 }
+
+
+
 const whatWeDoSlider = document.querySelector(".whatWeDoSlider");
 const whatWedoSection = document.querySelector(".whatWedoSection");
-let startX = 0;
+let whatWedoSliderMaxLeft = 0;
+
+let freshed = true;
+/*let startX = 0;
 let currentX = 0;
 let isDragging = false;
 let whatWedoSliderMaxLeft = 0;
@@ -304,7 +310,113 @@ function endDrag() {
       -whatWeDoSlider.offsetWidth + rectSection.right - whatWedoSliderMaxLeft;
     whatWeDoSlider.style.transform = `translateX(${currentX}px)`;
   }
+}*/
+
+
+
+
+
+
+function preventScroll(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
 }
+
+let startPos = 0;
+let lastPos = 0;
+let velocity = 0;
+let dragging = false;
+let deceleration = 0.95; // Adjust this value for more or less deceleration
+let decelerationInterval = 10; // Interval in milliseconds
+let decelerationId = null;
+whatWeDoSlider.style.left=whatWeDoSlider.getBoundingClientRect().left+"px"
+whatWeDoSlider.addEventListener("touchstart", startDrag);
+whatWeDoSlider.addEventListener("touchmove", doDrag);
+whatWeDoSlider.addEventListener("touchend", endDrag);
+whatWeDoSlider.addEventListener("mousedown", startDrag);
+whatWeDoSlider.addEventListener("mousemove", doDrag);
+whatWeDoSlider.addEventListener("mouseup", endDrag);
+function startDrag(e) {
+  startPos = (e.touches ? e.touches[0].clientX : e.clientX);
+  lastPos = startPos;
+  velocity = 0;
+  dragging = true;
+  if (decelerationId) {
+      clearInterval(decelerationId);
+      decelerationId = null;
+  }
+  if (freshed) {
+    freshed = false;
+    const rect = whatWeDoSlider.getBoundingClientRect();
+    whatWedoSliderMaxLeft = rect.left;
+  }
+}
+function doDrag(e) {
+  window.addEventListener("scroll", preventScroll, { passive: false });
+  e.preventDefault();
+  e.stopPropagation();
+  if (!dragging) return;
+  const currentPos = e.touches ? e.touches[0].clientX : e.clientX;
+  const deltaX = currentPos - lastPos;
+  let newLeft = parseFloat(whatWeDoSlider.style.left || '0') + deltaX;
+  const newRect = whatWeDoSlider.getBoundingClientRect();
+  const rectSection = whatWedoSection.getBoundingClientRect();
+  if (newRect.left + deltaX < whatWedoSliderMaxLeft && newRect.right + deltaX > rectSection.right) {
+    updateSliderPosition(newLeft);
+  }
+  
+  lastPos = currentPos;
+  velocity = deltaX; // Calculate velocity
+}
+function endDrag() {
+  dragging = false;
+  // Start the deceleration process
+  decelerationId = setInterval(applyVelocity, decelerationInterval);
+}
+function updateSliderPosition(pos) {
+    whatWeDoSlider.style.left = `${pos}px`;
+}
+
+function applyVelocity() {
+    if (Math.abs(velocity) < 0.1) {
+        clearInterval(decelerationId);
+        decelerationId = null;
+        return; // Stop the interval when velocity is very low
+    }
+    let currentLeft = parseFloat(whatWeDoSlider.style.left || '0');
+    let newLeft = currentLeft + velocity;
+
+
+    const newRect = whatWeDoSlider.getBoundingClientRect();
+    const rectSection = whatWedoSection.getBoundingClientRect();
+
+    updateSliderPosition(newLeft);
+    velocity *= deceleration; // Apply deceleration
+  if (newRect.left > whatWedoSliderMaxLeft) {
+    velocity=0
+    lastPos = whatWedoSliderMaxLeft;
+    whatWeDoSlider.style.left = `${lastPos}px`;
+  }
+  if (newRect.right < rectSection.right) {
+    velocity=0
+    // Snap back to right boundary
+    lastPos =-whatWeDoSlider.offsetWidth + rectSection.right ;
+    whatWeDoSlider.style.left = `${lastPos}px`;
+  }
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
 
 window.addEventListener("resize", handleResize);
 

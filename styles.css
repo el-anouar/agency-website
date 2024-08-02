@@ -461,6 +461,13 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+  user-select: none; /* Prevents selection on all browsers */
+  -moz-user-select: none; /* Prevents selection on Firefox */
+  -webkit-user-drag: none; /* Prevents drag on WebKit-based browsers */
+  -khtml-user-drag: none; /* Prevents drag on KHTML-based browsers */
+  -webkit-user-select: none; /* Prevents selection on WebKit-based browsers */
+  -ms-user-select: none; /* Prevents selection on IE10+ */
+  pointer-events: none;
 }
 
 .whatWeDoSliderCard>p {
@@ -2501,3 +2508,25 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 @media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {}
+
+
+
+
+
+
+
+
+.slider-container1 {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background-color: #e0e0e0;
+}
+
+.slider1 {
+  position: absolute;
+  height: 100%;
+  width: 50px; /* Set a fixed width for the slider */
+  background-color: #3498db;
+  cursor: pointer;
+}
