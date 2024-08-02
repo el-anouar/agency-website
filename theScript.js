@@ -229,7 +229,8 @@ function slidePrev() {
 const whatWeDoSlider = document.querySelector(".whatWeDoSlider");
 const whatWedoSection = document.querySelector(".whatWedoSection");
 let whatWedoSliderMaxLeft = 0;
-
+const whatWeDoSliderRect = whatWeDoSlider.getBoundingClientRect();
+const whatWeDoSectionRect = whatWedoSection.getBoundingClientRect();
 let freshed = true;
 function preventScroll(e) {
   e.preventDefault();
@@ -244,7 +245,9 @@ let dragging = false;
 let deceleration = 0.95; // Adjust this value for more or less deceleration
 let decelerationInterval = 10; // Interval in milliseconds
 let decelerationId = null;
-whatWeDoSlider.style.left=whatWeDoSlider.getBoundingClientRect().left+"px"
+let left =window.getComputedStyle(whatWeDoSlider);
+
+whatWeDoSlider.style.left=left.left
 whatWeDoSlider.addEventListener("touchstart", startDrag);
 whatWeDoSlider.addEventListener("touchmove", doDrag);
 whatWeDoSlider.addEventListener("touchend", endDrag);
@@ -262,8 +265,8 @@ function startDrag(e) {
   }
   if (freshed) {
     freshed = false;
-    const rect = whatWeDoSlider.getBoundingClientRect();
-    whatWedoSliderMaxLeft = rect.left;
+    whatWedoSliderMaxLeft = parseInt(whatWeDoSliderRect.left-whatWeDoSectionRect.left);
+
   }
 }
 function doDrag(e) {
@@ -276,20 +279,13 @@ function doDrag(e) {
   let newLeft = parseFloat(whatWeDoSlider.style.left || '0') + deltaX;
   const newRect = whatWeDoSlider.getBoundingClientRect();
   const rectSection = whatWedoSection.getBoundingClientRect();
-  if (newRect.left + deltaX < whatWedoSliderMaxLeft && newRect.right + deltaX > rectSection.right) {
+  console.log(newRect.right+" 000000000000000000" )
+  if (newRect.left-rectSection.left + deltaX < whatWedoSliderMaxLeft && newRect.right + deltaX > rectSection.right) {
     updateSliderPosition(newLeft);
   }
 
-  if (
-    newRect.left + deltaX < whatWedoSliderMaxLeft &&
-    newRect.right + deltaX > rectSection.right
-  ) {
-    whatWeDoSlider.style.transition = "";
-    currentX = deltaX;
-    updateSliderPosition(newLeft);
-  }
-  if (newRect.left + deltaX > whatWedoSliderMaxLeft) {
-    if (newRect.left < whatWedoSliderMaxLeft + 50) {
+  if (newRect.left-rectSection.left + deltaX > whatWedoSliderMaxLeft) {
+    if (newRect.left-rectSection.left < whatWedoSliderMaxLeft + 50) {
       currentX = deltaX;
       updateSliderPosition(newLeft);
     }
@@ -328,16 +324,17 @@ function applyVelocity() {
 
     updateSliderPosition(newLeft);
     velocity *= deceleration; // Apply deceleration
-  if (newRect.left > whatWedoSliderMaxLeft) {
+  if (newRect.left-rectSection.left > whatWedoSliderMaxLeft) {
     velocity=0
     lastPos = whatWedoSliderMaxLeft;
-    whatWeDoSlider.style.left = `${lastPos}px`;
+    updateSliderPosition(lastPos);
   }
   if (newRect.right < rectSection.right) {
     velocity=0
     // Snap back to right boundary
-    lastPos =-whatWeDoSlider.offsetWidth + rectSection.right ;
-    whatWeDoSlider.style.left = `${lastPos}px`;
+    lastPos =-whatWeDoSlider.offsetWidth + rectSection.right-rectSection.left;
+
+    updateSliderPosition(lastPos);
   }
   
   
