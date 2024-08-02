@@ -231,92 +231,6 @@ const whatWedoSection = document.querySelector(".whatWedoSection");
 let whatWedoSliderMaxLeft = 0;
 
 let freshed = true;
-/*let startX = 0;
-let currentX = 0;
-let isDragging = false;
-let whatWedoSliderMaxLeft = 0;
-let freshed = true;
-whatWeDoSlider.addEventListener("touchstart", startDrag);
-whatWeDoSlider.addEventListener("touchmove", doDrag);
-whatWeDoSlider.addEventListener("touchend", endDrag);
-whatWeDoSlider.addEventListener("mousedown", startDrag);
-whatWeDoSlider.addEventListener("mousemove", doDrag);
-whatWeDoSlider.addEventListener("mouseup", endDrag);
-function preventScroll(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  return false;
-}
-function startDrag(e) {
-  console.log("startDrag")
-  whatWeDoSlider.style.transition = "";
-  if (e.target.nodeName === "IMG") {
-    e.preventDefault();
-  }
-  isDragging = true;
-  startX = (e.touches ? e.touches[0].clientX : e.clientX) - currentX;
-  if (freshed) {
-    freshed = false;
-    const rect = whatWeDoSlider.getBoundingClientRect();
-    whatWedoSliderMaxLeft = rect.left;
-  }
-}
-function doDrag(e) {
-  window.addEventListener("scroll", preventScroll, { passive: false });
-  e.preventDefault();
-  e.stopPropagation();
-  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-  const newCurrentX = clientX - startX;
-
-  if (isDragging) {
-    const newRect = whatWeDoSlider.getBoundingClientRect();
-
-    const rectSection = whatWedoSection.getBoundingClientRect();
-    if (
-      newRect.left + newCurrentX < whatWedoSliderMaxLeft &&
-      newRect.right + newCurrentX > rectSection.right
-    ) {
-      whatWeDoSlider.style.transition = "";
-      currentX = newCurrentX;
-      whatWeDoSlider.style.transform = `translateX(${currentX}px)`;
-    }
-    if (newRect.left + newCurrentX > whatWedoSliderMaxLeft) {
-      if (newRect.left < whatWedoSliderMaxLeft + 300) {
-        currentX = newCurrentX;
-        whatWeDoSlider.style.transform = `translateX(${currentX}px)`;
-      }
-    }
-    if (newRect.right + newCurrentX < rectSection.right) {
-      if (newRect.right > rectSection.right - 300) {
-        currentX = newCurrentX;
-        whatWeDoSlider.style.transform = `translateX(${currentX}px)`;
-      }
-    }
-  }
-}
-function endDrag() {
-  isDragging = false;
-  whatWeDoSlider.style.transition = "transform 0.3s ease-in";
-  const newRect = whatWeDoSlider.getBoundingClientRect();
-  const rectSection = whatWedoSection.getBoundingClientRect();
-  // Snap-back effect
-  if (newRect.left > whatWedoSliderMaxLeft) {
-    currentX = 0;
-    whatWeDoSlider.style.transform = `translateX(${currentX}px)`;
-  }
-  if (newRect.right < rectSection.right) {
-    // Snap back to right boundary
-    currentX =
-      -whatWeDoSlider.offsetWidth + rectSection.right - whatWedoSliderMaxLeft;
-    whatWeDoSlider.style.transform = `translateX(${currentX}px)`;
-  }
-}*/
-
-
-
-
-
-
 function preventScroll(e) {
   e.preventDefault();
   e.stopPropagation();
@@ -365,7 +279,28 @@ function doDrag(e) {
   if (newRect.left + deltaX < whatWedoSliderMaxLeft && newRect.right + deltaX > rectSection.right) {
     updateSliderPosition(newLeft);
   }
-  
+
+  if (
+    newRect.left + deltaX < whatWedoSliderMaxLeft &&
+    newRect.right + deltaX > rectSection.right
+  ) {
+    whatWeDoSlider.style.transition = "";
+    currentX = deltaX;
+    updateSliderPosition(newLeft);
+  }
+  if (newRect.left + deltaX > whatWedoSliderMaxLeft) {
+    if (newRect.left < whatWedoSliderMaxLeft + 50) {
+      currentX = deltaX;
+      updateSliderPosition(newLeft);
+    }
+  }
+  if (newRect.right + deltaX < rectSection.right) {
+    if (newRect.right > rectSection.right - 50) {
+      currentX = deltaX;
+      updateSliderPosition(newLeft);
+    }
+  }
+
   lastPos = currentPos;
   velocity = deltaX; // Calculate velocity
 }
