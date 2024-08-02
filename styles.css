@@ -162,7 +162,10 @@ body {
   justify-content: space-between;
   padding: 50px;
 }
-
+a{
+  text-decoration: none;
+  color: var(--navBarLogoScrolledColor);
+}
 button {
   background: none;
   /* Remove background */
@@ -667,7 +670,6 @@ p {
   color: var(--clientTestimonialSPCardContainerStarsColor);
   font-weight: bold;
   margin-bottom: 20px;
-  margin-left: 20px;
   text-align: center;
   margin-top: 20px;
 }
@@ -695,7 +697,6 @@ p {
   margin: 0;
   margin-left: 0px;
   padding: 0;
-  margin-left: 20px;
   text-align: center;
 
 }
@@ -797,7 +798,7 @@ p {
   transition: 0.3s ease-in;
   display: flex;
   color: var(--faqAnswerColor);
-  font-size: 14px;
+  font-size: 16px;
   padding: 20px;
   padding-top: 0px;
 }
@@ -811,7 +812,7 @@ p {
 }
 
 .openAnswer {
-  height: 100px;
+  height: 200px;
   opacity: 1;
   padding: 20px;
   padding-top: 0px;
@@ -2210,13 +2211,19 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     width: 80px;
     margin-top: 10px;
   }
-
+  .whatWedoSection > h1{
+    padding-right: 50px;
+  }
+  .CaseStudiesSection > h1{
+    padding-right: 50px;
+    margin-left: 0;
+  }
   h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   h1>i {
-    bottom: calc(50% - 30px);
+    bottom: calc(50% - 20px);
   }
 
   #next-btn {
@@ -2236,7 +2243,39 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .theThirdTitle {
     font-size: 30px;
   }
+  .questionsContainer{
+    padding: 0px;
+  }
+  .ctaCaseStudiesSection{
+    width: 100%;
+  }
+  .clientInfo input{
+    margin-right: 0px;
+  }
 
+  .CaseStudiesCards {
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  }
+  .whatWedoSection{
+    width: 100%;
+  }
+  .CaseStudiesCard > h4 {
+
+    font-size: 12px;
+    padding: 10px 0 10px 0;
+  }
+  .whatweDoSideCard {
+    top: 0;
+    left: 0;
+    margin: auto;
+    right: 0;
+  }
+  .whatWeDoSlider{
+    left: 20px;
+    bottom: 50px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 768px) {
@@ -2268,7 +2307,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     margin-left: 25px;
     margin-top: 10px;
     margin-right: 0px;
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .navDesktopLogo.scrolled {
@@ -2363,6 +2402,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .theThirdTitle {
     font-size: 50px;
   }
+
 }
 
 
