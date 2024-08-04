@@ -332,7 +332,7 @@ function applyVelocity() {
   if (newRect.right < rectSection.right) {
     velocity=0
     // Snap back to right boundary
-    lastPos =-whatWeDoSlider.offsetWidth + rectSection.right-rectSection.left;
+    lastPos=-whatWeDoSlider.offsetWidth+rectSection.right -rectSection.left;
 
     updateSliderPosition(lastPos);
   }
