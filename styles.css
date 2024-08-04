@@ -65,6 +65,7 @@
   --firstDivPColor: #848484;
   --navMLIaBg:#1f1f1f;
   --navMLIaColor:#ffffff;
+  --navHBS:rgba(130, 130, 130, 0.385);
 }
 
 :root.dark-theme {
@@ -135,6 +136,7 @@
   --firstDivPColor: #b5b5b5;
   --navMLIaBg:#ffffff;
   --navMLIaColor:#1f1f1f;
+  --navHBS:transparent;
 }
 
 :root {
@@ -1349,7 +1351,7 @@ button:hover {
 .navbarDesktopHolder.scrolled {
   background-color: var(--navBarHolderScrolledBg);
   border-radius: 0;
-  box-shadow: 0 0 10px rgba(130, 130, 130, 0.385);
+  box-shadow: 0 0 10px var(--navHBS);
 
 }
 
@@ -1425,7 +1427,7 @@ button:hover {
   background-color: none;
   backdrop-filter: none;
   background-color: var(--navMobileLogoScrolledBg);
-  box-shadow: 0 0 30px #8686865e;
+  box-shadow: 0 0 30px var(--navHBS);
 
 }
 
@@ -1840,7 +1842,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   padding: 20px;
   background-color: var(--navMobileListHolderBg);
   width: 100%;
-  box-shadow: 0 0 30px #8686865e;
+  box-shadow: 0 0 30px var(--navHBS);
   position: relative;
   left: 0;
 }
@@ -2348,6 +2350,10 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     left: 20px;
     bottom: 50px;
   }
+  .aboutCardHolder {
+
+
+  }
 }
 
 @media (min-width: 601px) and (max-width: 768px) {
@@ -2473,6 +2479,10 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
   .theThirdTitle {
     font-size: 50px;
+  }
+  .aboutCardHolder {
+
+
   }
 
 }
