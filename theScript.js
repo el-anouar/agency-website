@@ -368,14 +368,14 @@ function handleResize() {
   let theFirstTitleButtHeight = 50;
   let removeFirstTitle = false;
   let theFirstTitleDivHeight = 100;
-  if (windowWidth < 1024 ) {
+  if (windowWidth < 1024 *pixelRatio) {
     theFirstTitleMaxWidth = 200;
     theFirstTitleButtWidth = 40;
     theFirstTitleButtHeight = 40;
     removeFirstTitle = false;
     theFirstTitleDivHeight = 90;
   }
-  if (windowWidth < 769 ) {
+  if (windowWidth < 769 *pixelRatio) {
     theFirstTitleMaxWidth = 200;
     theFirstTitleButtWidth = 30;
     theFirstTitleButtHeight = 30;
@@ -389,16 +389,12 @@ function handleResize() {
     slider.style.height = `calc(99.5vh)`;
     windowWidth769 = false;
   }
-  if (windowWidth < 769) {
+  if (windowWidth < 769*pixelRatio) {
     removeFirstTitle = true;
     container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px - 40px)`;
     slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
   }
-  if(windowHeight< 769) {
-    theFirstTitleMaxWidth = 200;
-    theFirstTitleButtWidth = 30;
-    theFirstTitleButtHeight = 30;
-    theFirstTitleDivHeight = 70;
+  if(windowHeight< 769*pixelRatio) {
     windowWidth769 = true;
     removeFirstTitle = true;
     container.style.height = `calc(100vh)`;

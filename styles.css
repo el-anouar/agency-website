@@ -2300,7 +2300,9 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .insta{
     top: 250px;
   }
-  .theFirstTitle {}
+  .theFirstTitle {
+
+  }
 
   .theSecondTitle {
     font-size: 30px;
@@ -2564,7 +2566,16 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     font-size: 70px;
   }
 }
+@media (max-height: 600px) {
 
+  .theSecondTitle {
+    font-size: 30px;
+  }
+
+  .theThirdTitle {
+    font-size: 30px;
+  }
+}
 
 @media (min-width: 1025px) {}
 
