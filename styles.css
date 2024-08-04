@@ -2576,7 +2576,33 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     font-size: 70px;
   }
 }
+@media (max-height: 768px) {
+  .wats{
+    top: 120px;
+    left: 40px;
+  }
+  .fac{
+    top: 120px;
+    left: 90px;
+  }
+  .insta{
+    top: 120px;
+    left: 140px;
+  }
+}
 @media (max-height: 600px) {
+  .wats{
+    top: 120px;
+    left: 40px;
+  }
+  .fac{
+    top: 120px;
+    left: 90px;
+  }
+  .insta{
+    top: 120px;
+    left: 140px;
+  }
   .navDeskTopDLModOuter,
   .navMobileDLModOuter {
     height: 30px;
