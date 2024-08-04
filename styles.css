@@ -249,15 +249,16 @@ button {
   background-color: var(--letUsWorkBg);
   width: 190px;
   position: absolute;
-  font-size: large;
-  font-weight: lighter;
+  font-size: 15px;
+  font-weight: normal;
   display: flex;
   align-items: center;
-  letter-spacing: 4px;
   justify-content: center;
   box-shadow: 0px 0px 30px #0000002b;
 }
-
+.letUsWork>i{
+  margin-left: 5px;
+}
 .underLetUsWork {
   color: var(--underLetUsWorkColor);
   background-color: var(--UnderLetUsWorkBg);
