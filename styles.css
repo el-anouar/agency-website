@@ -80,7 +80,7 @@
   --navBarHolderScrolledBg: #1f1f1f;
   --navBarLogoColor: #ffffff;
   --navBarLogoScrolledColor: #ffffff;
-  --svgPathFillColor: #1f1f1f;
+  --svgPathFillColor: #202020;
   --theFirstTitleColor: #ffffff;
   --theFirstTitleButtBorderColor: #ffffff;
   --theFirstTitleButtColor: #ffffff;
@@ -381,7 +381,7 @@ section {}
   justify-content: center;
   border-radius: 0 30px 30px 0;
   margin: auto;
-  z-index: 0;
+  z-index: -1;
 }
 
 .CaseStudiesSection {
@@ -1441,7 +1441,9 @@ button:hover {
 .navDesktop2.scrolled {
   margin-top: 0;
 }
-
+.navDesktop2.scrolled .hamburger {
+  box-shadow: none;
+}
 .navDesktop2.scrolled .contactUsButton {
   box-shadow: none;
 
@@ -2132,6 +2134,9 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 
 @media (max-width: 600px) {
+  .navbarDesktopHolder.scrolled{
+    height: 70px;
+  }
   .navMobileListItem {
 
     width: 100%;
@@ -2195,7 +2200,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     width: 40px;
     height: 40px;
     border-radius: 10px;
-
+    /*box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.36);*/
   }
 
   .testimonialContainer {

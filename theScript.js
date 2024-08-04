@@ -351,47 +351,51 @@ function applyVelocity() {
 
 
 window.addEventListener("resize", handleResize);
-
 let windowWidth769 = false;
 function handleResize() {
   theThirdTitle.style.height="0px"
   theSecondTitle.style.height="0px"
-  container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px)`;
-  slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px)`;
+  container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px - 40px)`;
+  slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
   const borderRadius = 20
   const innerShapeMargin = 20;
   const tCBorderRadius = 30;
   let windowWidth = window.screen.width;
+  let windowHeight = window.screen.height;
   let theFirstTitleMaxWidth = 300;
   let theFirstTitleButtWidth = 50;
   let theFirstTitleButtHeight = 50;
   let removeFirstTitle = false;
   let theFirstTitleDivHeight = 100;
-  if (windowWidth < 1024 * pixelRatio) {
+  if (windowWidth < 1024 ) {
     theFirstTitleMaxWidth = 200;
     theFirstTitleButtWidth = 40;
     theFirstTitleButtHeight = 40;
     removeFirstTitle = false;
     theFirstTitleDivHeight = 90;
   }
-  if (windowWidth < 769 * pixelRatio) {
+  if (windowWidth < 769 ) {
     theFirstTitleMaxWidth = 200;
     theFirstTitleButtWidth = 30;
     theFirstTitleButtHeight = 30;
     removeFirstTitle = false;
     theFirstTitleDivHeight = 70;
-    container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px)`;
-    slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px)`;
+    container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px - 40px)`;
+    slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
     windowWidth769 = true;
   } else {
     container.style.height = `calc(100vh)`;
     slider.style.height = `calc(99.5vh)`;
     windowWidth769 = false;
   }
-  if (windowWidth < 769 * pixelRatio) {
+  if (windowWidth < 769) {
     removeFirstTitle = true;
-    container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px)`;
-    slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px)`;
+    container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px - 40px)`;
+    slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
+  }
+  if(windowHeight< 769) {
+    container.style.height = `calc(100vh)`;
+    slider.style.height = `calc(99.5vh)`;
   }
   console.log(windowWidth ,"<" ,769 * pixelRatio,pixelRatio)
   ///////////////////////////////////////////////////////////////////
