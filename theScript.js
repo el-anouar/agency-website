@@ -396,11 +396,8 @@ function handleResize() {
     slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
     
   }
-  if(windowHeight< 769*pixelRatio) {
-    if(windowWidth < 769*pixelRatio){
-      windowWidth769 = true;
-    }
-    
+  if(windowHeight< 601*pixelRatio) {
+    windowWidth769 = true;
     removeFirstTitle = true;
     container.style.height = `calc(100vh)`;
     slider.style.height = `calc(99.5vh)`;

@@ -1367,6 +1367,7 @@ button:hover {
   margin-top: 0;
 }
 
+
 .navDesktop1.scrolled .navDesktopList {
   background-color: none;
   border-radius: none;
@@ -2032,7 +2033,6 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 
 
-
 /*@media (max-width: 1070px) {
 
 }
@@ -2604,3 +2604,4 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   background-color: #3498db;
   cursor: pointer;
 }
+
