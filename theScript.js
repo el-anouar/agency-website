@@ -353,6 +353,8 @@ function applyVelocity() {
 window.addEventListener("resize", handleResize);
 let windowWidth769 = false;
 function handleResize() {
+  let windowWidth = window.screen.width;
+  let windowHeight = window.screen.height;
   theThirdTitle.style.height="0px"
   theSecondTitle.style.height="0px"
   container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px - 40px)`;
@@ -360,8 +362,7 @@ function handleResize() {
   const borderRadius = 20
   const innerShapeMargin = 20;
   const tCBorderRadius = 30;
-  let windowWidth = window.screen.width;
-  let windowHeight = window.screen.height;
+
   let theFirstTitleMaxWidth = 300;
   let theFirstTitleButtWidth = 50;
   let theFirstTitleButtHeight = 50;
@@ -394,6 +395,12 @@ function handleResize() {
     slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
   }
   if(windowHeight< 769) {
+    theFirstTitleMaxWidth = 200;
+    theFirstTitleButtWidth = 30;
+    theFirstTitleButtHeight = 30;
+    theFirstTitleDivHeight = 70;
+    windowWidth769 = true;
+    removeFirstTitle = true;
     container.style.height = `calc(100vh)`;
     slider.style.height = `calc(99.5vh)`;
   }
