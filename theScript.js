@@ -396,8 +396,12 @@ function handleResize() {
     slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
     
   }
-  if(windowHeight< 601*pixelRatio) {
-    windowWidth769 = true;
+  if(windowHeight< 601) {
+    console.log("windowHeight< 601*pixelRatio",windowHeight)
+    if (windowWidth < 769*pixelRatio) {
+      windowWidth769 = true;
+    }
+    
     removeFirstTitle = true;
     container.style.height = `calc(100vh)`;
     slider.style.height = `calc(99.5vh)`;
@@ -1123,11 +1127,9 @@ document.addEventListener("scroll", function () {
   const navDesktop2 = document.querySelector(".navDesktop2");
 
   if (scrollPosition > 10) {
-    navDesktop1.classList.add("scrolled");
-    navDesktop2.classList.add("scrolled");
+
   } else {
-    navDesktop1.classList.remove("scrolled");
-    navDesktop2.classList.remove("scrolled");
+
   }
   if (
     scrollPosition >
@@ -1135,9 +1137,13 @@ document.addEventListener("scroll", function () {
   ) {
     navbarDesktopHolder.classList.add("scrolled");
     navDesktopLogo.classList.add("scrolled");
+    navDesktop1.classList.add("scrolled");
+    navDesktop2.classList.add("scrolled");
   } else {
     navbarDesktopHolder.classList.remove("scrolled");
     navDesktopLogo.classList.remove("scrolled");
+    navDesktop1.classList.remove("scrolled");
+    navDesktop2.classList.remove("scrolled");
   }
 
   const navMobileLogo = document.querySelector(".navMobileLogo");
