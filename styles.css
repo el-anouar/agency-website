@@ -26,7 +26,7 @@
   --nextPrevColor: #1f1f1f;
   --aboutButtonBg: #ffffff;
   --aboutButtonColor: #1f1f1f;
-  --aboutCardContainerPColor: #b5b5b5;
+  --aboutCardContainerPColor: #828282;
   --hamburgerBg: #ffffff;
   --hamburgerColor: #1f1f1f;
   --navMobileColor: #ffffff;
@@ -2376,8 +2376,8 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
   }
   :root.light-theme{
-  --svgPathAboutFillColor: #f4f4f4;
-  --aboutCardContainerPColor:#b5b5b5;
+  --svgPathAboutFillColor: #f9f9f9;
+  --aboutCardContainerPColor:#828282;
   }
   :root.dark-theme {
 
@@ -2516,8 +2516,8 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
   }
   :root.light-theme{
-    --svgPathAboutFillColor: #f4f4f4;
-    --aboutCardContainerPColor:#b5b5b5;
+    --svgPathAboutFillColor: #f9f9f9;
+    --aboutCardContainerPColor:#828282;
     }
     :root.dark-theme {
   
