@@ -255,6 +255,7 @@ whatWeDoSlider.addEventListener("mousedown", startDrag);
 whatWeDoSlider.addEventListener("mousemove", doDrag);
 whatWeDoSlider.addEventListener("mouseup", endDrag);
 function startDrag(e) {
+
   startPos = (e.touches ? e.touches[0].clientX : e.clientX);
   lastPos = startPos;
   velocity = 0;
@@ -352,6 +353,7 @@ function applyVelocity() {
 
 window.addEventListener("resize", handleResize);
 let windowWidth769 = false;
+let windowHeight601=false
 function handleResize() {
   let windowWidth = window.screen.width;
   let windowHeight = window.screen.height;
@@ -379,7 +381,7 @@ function handleResize() {
     theFirstTitleMaxWidth = 200;
     theFirstTitleButtWidth = 30;
     theFirstTitleButtHeight = 30;
-    removeFirstTitle = false;
+    removeFirstTitle = true;
     theFirstTitleDivHeight = 70;
     container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px - 40px)`;
     slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
@@ -389,25 +391,22 @@ function handleResize() {
     slider.style.height = `calc(99.5vh)`;
     windowWidth769 = false;
   }
-  if (windowWidth < 769*pixelRatio) {
 
-    removeFirstTitle = true;
-    container.style.height = `calc(100vh - ${aboutCardHolder.clientHeight}px - 40px)`;
-    slider.style.height = `calc(99.5vh - ${aboutCardHolder.clientHeight}px - 40px)`;
-    
-  }
+
   if(windowHeight< 601) {
-    console.log("windowHeight< 601*pixelRatio",windowHeight)
+    windowHeight601=true
+    removeFirstTitle = true;
     if (windowWidth < 769*pixelRatio) {
       windowWidth769 = true;
     }
     
-    removeFirstTitle = true;
+    
     container.style.height = `calc(100vh)`;
     slider.style.height = `calc(99.5vh)`;
 
+  }else{
+    windowHeight601=false
   }
-  console.log(windowWidth ,"<" ,769 * pixelRatio,pixelRatio)
   ///////////////////////////////////////////////////////////////////
 
   svg.setAttribute("width", container.clientWidth);
@@ -498,7 +497,7 @@ function handleResize() {
     theFirstTitle.style.height = `${theFirstH}px`;
   }
 
-  if (windowWidth769) {
+  if (windowWidth769||windowHeight601) {
     letUsWork.style.height = `${borderRadius + borderRadius}px`;
     letUsWork.style.borderRadius = `${borderRadius}px`;
     underLetUsWork.style.height = `${tCBorderRadius + tCBorderRadius / 2}px`;
@@ -818,7 +817,7 @@ function styleAboutCard(innerShapeMargin){
   aboutCardHolder.style.height = `${shrunk?aboutCardSvgBorderRadius + 3 * ButtBorderRadius:aboutCardContainerHeight}px`;
   aboutCardContainer.style.display = "flex";
   aboutCardContainer.style.position = "absolute";
-  aboutCardContainer.style.filter = "drop-shadow(0px 0px 30px #0000002b)";
+  aboutCardContainer.style.filter = "drop-shadow(0px 0px 10px #0000002b)";
   aboutCardContainer.style.width = `${shrunk?aboutCardSvgBorderRadius + 3 * ButtBorderRadius:aboutCardContainerWidth}px`;
   aboutCardContainer.style.height = `${shrunk?aboutCardSvgBorderRadius + 3 * ButtBorderRadius:aboutCardContainerHeight}px`;
   aboutCardContainer.style.right = `${0}px`;
