@@ -269,18 +269,21 @@ function startDrag(e) {
     whatWedoSliderMaxLeft = parseInt(whatWeDoSliderRect.left-whatWeDoSectionRect.left);
 
   }
+
 }
 function doDrag(e) {
   window.addEventListener("scroll", preventScroll, { passive: false });
   e.preventDefault();
   e.stopPropagation();
+
   if (!dragging) return;
   const currentPos = e.touches ? e.touches[0].clientX : e.clientX;
   const deltaX = currentPos - lastPos;
   let newLeft = parseFloat(whatWeDoSlider.style.left || '0') + deltaX;
   const newRect = whatWeDoSlider.getBoundingClientRect();
   const rectSection = whatWedoSection.getBoundingClientRect();
-  console.log(newRect.right+" 000000000000000000" )
+
+
   if (newRect.left-rectSection.left + deltaX < whatWedoSliderMaxLeft && newRect.right + deltaX > rectSection.right) {
     updateSliderPosition(newLeft);
   }

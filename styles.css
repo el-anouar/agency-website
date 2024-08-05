@@ -502,11 +502,18 @@ p {
   display: flex;
   flex-direction: column;
   position: relative;
-
+  user-select: none; /* Prevents selection on all browsers */
+  -moz-user-select: none; /* Prevents selection on Firefox */
+  -webkit-user-drag: none; /* Prevents drag on WebKit-based browsers */
+  -khtml-user-drag: none; /* Prevents drag on KHTML-based browsers */
+  -webkit-user-select: none; /* Prevents selection on WebKit-based browsers */
+  -ms-user-select: none; /* Prevents selection on IE10+ */
+  /*pointer-events: none;*/
 
 }
 
-.whatWeDoSliderCard>img {
+
+.whatWeDoSliderCard img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -518,9 +525,10 @@ p {
   -webkit-user-select: none; /* Prevents selection on WebKit-based browsers */
   -ms-user-select: none; /* Prevents selection on IE10+ */
   pointer-events: none;
+  
 }
 
-.whatWeDoSliderCard>p {
+.whatWeDoSliderCard p {
   color: #4f4f4f;
   font-size: 14px;
   font-weight: normal;
@@ -529,7 +537,7 @@ p {
   margin: 10px 10px 10px 10px;
 }
 
-.whatWeDoSliderCard>h4 {
+.whatWeDoSliderCard a {
   position: absolute;
   padding: 20px;
   color: #4f4f4f;
@@ -540,6 +548,8 @@ p {
   left: 0;
   backdrop-filter: blur(10px);
   color: #464646;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .CaseStudiesCards {
@@ -557,15 +567,21 @@ p {
   display: flex;
   flex-direction: column;
 }
-
-.CaseStudiesCard>img {
+.CaseStudiesCard a{
+  height: 100%;
+width: 100%;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+}
+.CaseStudiesCard img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
 
-.CaseStudiesCard>p {
+.CaseStudiesCard p {
   color: #4f4f4f;
   font-size: 14px;
   font-weight: normal;
@@ -574,7 +590,7 @@ p {
   margin: 10px 10px 10px 10px;
 }
 
-.CaseStudiesCard>h4 {
+.CaseStudiesCard h4 {
   color: var(--caseStudiesCardh4Color);
   justify-content: space-between;
   align-items: center;
