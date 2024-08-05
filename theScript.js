@@ -817,7 +817,7 @@ function styleAboutCard(innerShapeMargin){
   aboutCardHolder.style.height = `${shrunk?aboutCardSvgBorderRadius + 3 * ButtBorderRadius:aboutCardContainerHeight}px`;
   aboutCardContainer.style.display = "flex";
   aboutCardContainer.style.position = "absolute";
-  aboutCardContainer.style.filter = "drop-shadow(0px 0px 10px #0000002b)";
+  
   aboutCardContainer.style.width = `${shrunk?aboutCardSvgBorderRadius + 3 * ButtBorderRadius:aboutCardContainerWidth}px`;
   aboutCardContainer.style.height = `${shrunk?aboutCardSvgBorderRadius + 3 * ButtBorderRadius:aboutCardContainerHeight}px`;
   aboutCardContainer.style.right = `${0}px`;

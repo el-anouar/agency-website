@@ -12,6 +12,7 @@
   --navBarLogoColor: #ffffff;
   --navBarLogoScrolledColor: #1f1f1f;
   --svgPathFillColor: #ffffff;
+  --svgPathAboutFillColor: #ffffff;
   --theFirstTitleColor: #1f1f1f;
   --theFirstTitleButtBorderColor: #1f1f1f;
   --theFirstTitleButtColor: #1f1f1f;
@@ -25,7 +26,7 @@
   --nextPrevColor: #1f1f1f;
   --aboutButtonBg: #ffffff;
   --aboutButtonColor: #1f1f1f;
-  --aboutCardContainerPColor: #1f1f1f;
+  --aboutCardContainerPColor: #b5b5b5;
   --hamburgerBg: #ffffff;
   --hamburgerColor: #1f1f1f;
   --navMobileColor: #ffffff;
@@ -82,6 +83,7 @@
   --navBarLogoColor: #ffffff;
   --navBarLogoScrolledColor: #ffffff;
   --svgPathFillColor: #202020;
+  --svgPathAboutFillColor: #202020;
   --theFirstTitleColor: #ffffff;
   --theFirstTitleButtBorderColor: #ffffff;
   --theFirstTitleButtColor: #ffffff;
@@ -95,7 +97,7 @@
   --nextPrevColor: #ffffff;
   --aboutButtonBg: #1f1f1f;
   --aboutButtonColor: #ffffff;
-  --aboutCardContainerPColor: #ffffff;
+  --aboutCardContainerPColor: #bdbdbd;
   --hamburgerBg: #1f1f1f;
   --hamburgerColor: #ffffff;
   --navMobileColor: #ffffff;
@@ -199,7 +201,7 @@ button {
 }
 
 #svgPathAbout {
-  fill: var(--svgPathFillColor);
+  fill: var(--svgPathAboutFillColor);
 }
 
 .theFirstTitle {
@@ -1652,6 +1654,7 @@ button:hover {
   flex-direction: column;
   padding: 20px;
   overflow: hidden;
+  filter :drop-shadow(0px 0px 10px #0000002b);
 }
 
 
@@ -2372,6 +2375,16 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 
   }
+  :root.light-theme{
+  --svgPathAboutFillColor: #f4f4f4;
+  --aboutCardContainerPColor:#b5b5b5;
+  }
+  :root.dark-theme {
+
+  }
+  .aboutCardContainer {
+    filter :none;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 768px) {
@@ -2502,7 +2515,16 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 
   }
-
+  :root.light-theme{
+    --svgPathAboutFillColor: #f4f4f4;
+    --aboutCardContainerPColor:#b5b5b5;
+    }
+    :root.dark-theme {
+  
+    }
+    .aboutCardContainer {
+      filter :none;
+    }
 }
 
 
