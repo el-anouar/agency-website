@@ -2622,6 +2622,9 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .underContactUsWork{
     width: 100%;
   }
+  .letUsTalkHeroContainer p {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 768px) {
