@@ -2251,8 +2251,8 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   background: var(--ctaCaseStudiesSectionBg);
   border-radius: 20px;
   display: flex;
+  padding-top: 40px;
   grid-gap: 20px;
-  padding-top: 100px;
   padding-bottom: 40px;
   margin-top: 100px;
 }
