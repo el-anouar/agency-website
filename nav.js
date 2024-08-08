@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to set the active link based on current URL
   function setActiveLink() {
-    const currentURL = window.location.pathname.split('/');
+    const currentURL = "/"+window.location.pathname.split('/');
     console.log("currentUrl",currentURL)
     navLinks.forEach((link) => {
       
-      if (currentURL.includes("/"+link.getAttribute("href"))) {
+      if (currentURL.includes(link.getAttribute("href"))) {
         console.log("currentURL.includes(link.getAttribute(href))",currentURL.includes(link.getAttribute("href")))
         console.log(link.getAttribute("href"))
         link.classList.add("active");
