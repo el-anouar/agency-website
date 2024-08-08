@@ -66,13 +66,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set the active link on page load
   setActiveLink();
 
-  // Add click event to set the active link on click
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      navLinks.forEach((item) => {
-        item.classList.remove("active");
-      });
-      this.classList.add("active");
-    });
-  });
 });
