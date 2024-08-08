@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to set the active link based on current URL
   function setActiveLink() {
-    const currentURL = window.location.pathname.split('/').pop();;
+    const currentURL = window.location.pathname.split('/').pop();
     console.log("currentUrl",currentURL)
     navLinks.forEach((link) => {
       
