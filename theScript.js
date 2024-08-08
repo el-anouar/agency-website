@@ -1149,5 +1149,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Add an event listener to all links
-
