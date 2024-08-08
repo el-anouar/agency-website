@@ -1,3 +1,14 @@
+window.addEventListener("load", function () {
+  const loadingScreen = document.getElementById("loading-screen");
+  const content = document.querySelector(".content");
+
+  // Hide the loading screen
+  loadingScreen.style.display = "none";
+
+  // Show the content
+  content.style.display = "block";
+});
+
 const navMobile = document.querySelector(".navMobile");
 const navMobileListHolder = navMobile.querySelector(".navMobileListHolder");
 document.querySelector(".hamburger").addEventListener("click", function () {
