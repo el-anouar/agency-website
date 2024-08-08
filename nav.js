@@ -1,13 +1,28 @@
-window.addEventListener("load", function () {
+// script.js
+
+// Function to hide the loading screen
+function hideLoadingScreen() {
   const loadingScreen = document.getElementById("loading-screen");
-  const content = document.querySelector(".content");
-
-  // Hide the loading screen
   loadingScreen.style.display = "none";
+}
 
-  // Show the content
-  content.style.display = "block";
+// Array to keep track of loaded scripts
+const scripts = document.querySelectorAll('script[defer]');
+let loadedScripts = 0;
+console.log(scripts)
+// Increment counter when each script loads
+scripts.forEach((script) => {
+  script.addEventListener('load', () => {
+    loadedScripts++;
+    if (loadedScripts === scripts.length) {
+      setTimeout(() => {
+        hideLoadingScreen();
+      },500)
+      
+    }
+  });
 });
+
 
 const navMobile = document.querySelector(".navMobile");
 const navMobileListHolder = navMobile.querySelector(".navMobileListHolder");

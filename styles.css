@@ -3009,7 +3009,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--bodyBg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3018,7 +3018,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 .loader {
   font-size: 48px;
-  color: #333;
+  color: var(--navDesktopListColor);
   animation: spin 1s linear infinite;
 }
 
