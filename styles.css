@@ -64,9 +64,10 @@
   --checkBoxCheckedBg: #1f1f1f;
   --checkBoxCheckedB: #1f1f1f;
   --firstDivPColor: #848484;
-  --navMLIaBg:#1f1f1f;
-  --navMLIaColor:#ffffff;
-  --navHBS:rgba(130, 130, 130, 0.385);
+  --navMLIaBg: #1f1f1f;
+  --navMLIaColor: #ffffff;
+  --navHBS: rgba(130, 130, 130, 0.385);
+  --letUsTalkBG: white;
 }
 
 :root.dark-theme {
@@ -136,9 +137,10 @@
   --checkBoxCheckedBg: #ffffff;
   --checkBoxCheckedB: #ffffff;
   --firstDivPColor: #b5b5b5;
-  --navMLIaBg:#ffffff;
-  --navMLIaColor:#1f1f1f;
-  --navHBS:transparent;
+  --navMLIaBg: #ffffff;
+  --navMLIaColor: #1f1f1f;
+  --navHBS: transparent;
+  --letUsTalkBG: #1c1c1c;
 }
 
 :root {
@@ -167,10 +169,12 @@ body {
   justify-content: space-between;
   padding: 50px;
 }
-a{
+
+a {
   text-decoration: none;
   color: var(--navBarLogoScrolledColor);
 }
+
 button {
   background: none;
   /* Remove background */
@@ -260,9 +264,11 @@ button {
   justify-content: center;
   box-shadow: 0px 0px 30px #0000002b;
 }
-.letUsWork>i{
+
+.letUsWork>i {
   margin-left: 5px;
 }
+
 .underLetUsWork {
   color: var(--underLetUsWorkColor);
   background-color: var(--UnderLetUsWorkBg);
@@ -278,45 +284,47 @@ button {
   box-shadow: 0px 0px 30px #0000002b;
 }
 
-.wats{
+.wats {
   background-color: var(--nextPrevBg);
   color: var(--nextPrevColor);
   width: 40px;
-  height:40px;
-  border-radius:40px;
-  display:flex !important;
-  justify-content:center;
-  align-items:center;
+  height: 40px;
+  border-radius: 40px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   position: absolute;
   top: 200px;
   left: 40px;
   cursor: pointer;
 }
-.fac{
+
+.fac {
   background-color: var(--nextPrevBg);
   color: var(--nextPrevColor);
   width: 40px;
-  height:40px;
-  border-radius:40px;
-  display:flex !important;
-  justify-content:center;
-  align-items:center;
+  height: 40px;
+  border-radius: 40px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   position: absolute;
   top: 250px;
   left: 40px;
   cursor: pointer;
 }
-.insta{
+
+.insta {
   background-color: var(--nextPrevBg);
   color: var(--nextPrevColor);
   width: 40px;
-  height:40px;
-  border-radius:40px;
-  display:flex !important;
-  justify-content:center;
-  align-items:center;
+  height: 40px;
+  border-radius: 40px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   position: absolute;
   top: 300px;
@@ -502,12 +510,18 @@ p {
   display: flex;
   flex-direction: column;
   position: relative;
-  user-select: none; /* Prevents selection on all browsers */
-  -moz-user-select: none; /* Prevents selection on Firefox */
-  -webkit-user-drag: none; /* Prevents drag on WebKit-based browsers */
-  -khtml-user-drag: none; /* Prevents drag on KHTML-based browsers */
-  -webkit-user-select: none; /* Prevents selection on WebKit-based browsers */
-  -ms-user-select: none; /* Prevents selection on IE10+ */
+  user-select: none;
+  /* Prevents selection on all browsers */
+  -moz-user-select: none;
+  /* Prevents selection on Firefox */
+  -webkit-user-drag: none;
+  /* Prevents drag on WebKit-based browsers */
+  -khtml-user-drag: none;
+  /* Prevents drag on KHTML-based browsers */
+  -webkit-user-select: none;
+  /* Prevents selection on WebKit-based browsers */
+  -ms-user-select: none;
+  /* Prevents selection on IE10+ */
   /*pointer-events: none;*/
 
 }
@@ -518,14 +532,20 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  user-select: none; /* Prevents selection on all browsers */
-  -moz-user-select: none; /* Prevents selection on Firefox */
-  -webkit-user-drag: none; /* Prevents drag on WebKit-based browsers */
-  -khtml-user-drag: none; /* Prevents drag on KHTML-based browsers */
-  -webkit-user-select: none; /* Prevents selection on WebKit-based browsers */
-  -ms-user-select: none; /* Prevents selection on IE10+ */
+  user-select: none;
+  /* Prevents selection on all browsers */
+  -moz-user-select: none;
+  /* Prevents selection on Firefox */
+  -webkit-user-drag: none;
+  /* Prevents drag on WebKit-based browsers */
+  -khtml-user-drag: none;
+  /* Prevents drag on KHTML-based browsers */
+  -webkit-user-select: none;
+  /* Prevents selection on WebKit-based browsers */
+  -ms-user-select: none;
+  /* Prevents selection on IE10+ */
   pointer-events: none;
-  
+
 }
 
 .whatWeDoSliderCard p {
@@ -567,13 +587,15 @@ p {
   display: flex;
   flex-direction: column;
 }
-.CaseStudiesCard a{
+
+.CaseStudiesCard a {
   height: 100%;
-width: 100%;
-border-radius: 20px;
-display: flex;
-flex-direction: column;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 }
+
 .CaseStudiesCard img {
   width: 100%;
   height: 100%;
@@ -597,14 +619,16 @@ flex-direction: column;
   height: 50px;
   display: flex;
 }
-.casetagHolder{
+
+.casetagHolder {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
 
 }
-.caseTag{
+
+.caseTag {
   border: 1px solid var(--buttonBorderTransB);
   border-radius: 20px;
   justify-content: center;
@@ -612,6 +636,7 @@ flex-direction: column;
   font-size: 10px;
   padding: 5px 10px 5px 10px;
 }
+
 .testimonialSection {
   width: 100%;
 }
@@ -1442,7 +1467,10 @@ button:hover {
   margin-left: 40px;
   color: var(--navBarLogoColor);
 }
+.navDesktopLogo a{
 
+  color: var(--navBarLogoColor);
+}
 .navDesktopLogo.scrolled {
   margin-top: 0;
   border: none;
@@ -1452,7 +1480,9 @@ button:hover {
   backdrop-filter: none;
   justify-content: center;
 }
-
+.navDesktopLogo.scrolled a{
+  color: var(--navBarLogoScrolledColor);
+}
 .navMobileLogo.scrolled {
   margin-top: 0;
   border: none;
@@ -1464,7 +1494,9 @@ button:hover {
   box-shadow: 0 0 30px var(--navHBS);
 
 }
-
+.navMobileLogo.scrolled a{
+  color: var(--navMobileLogoScrolledColor);
+}
 .navDesktop2 {
   display: flex;
   justify-content: flex-end;
@@ -1479,9 +1511,11 @@ button:hover {
 .navDesktop2.scrolled {
   margin-top: 0;
 }
+
 .navDesktop2.scrolled .hamburger {
   box-shadow: none;
 }
+
 .navDesktop2.scrolled .contactUsButton {
   box-shadow: none;
 
@@ -1670,7 +1704,7 @@ button:hover {
   flex-direction: column;
   padding: 20px;
   overflow: hidden;
-  filter :drop-shadow(0px 0px 10px #0000002b);
+  filter: drop-shadow(0px 0px 10px #0000002b);
 }
 
 
@@ -1868,7 +1902,9 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   margin-bottom: 20px;
   color: var(--navMobileColor);
 }
-
+.navMobileLogo a{
+  color: var(--navMobileColor);
+}
 .navMobileListHolder {
   display: flex;
   justify-content: center;
@@ -1924,6 +1960,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   color: white;
 
 }
+
 .navMobileListItem>a.active {
 
   border: 2px solid var(--buttonBorderTransB);
@@ -1931,9 +1968,11 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   color: var(--navMLIaColor);
 
 }
+
 .navMobileListItem>a.active:hover {
 
-  border: 2px solid #ffbf00;;
+  border: 2px solid #ffbf00;
+  ;
   background-color: #ffbf00;
   color: white;
 }
@@ -2171,23 +2210,171 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 
 
+
+
+
+
+
+
+
+
+
+.slider-container1 {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background-color: #e0e0e0;
+}
+
+.slider1 {
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  /* Set a fixed width for the slider */
+  background-color: #3498db;
+  cursor: pointer;
+}
+
+.contactUsSection {
+  width: 100%;
+  display: flex;
+  border-radius: 20px;
+  padding: 20px;
+  padding-top: 20px;
+  flex-direction: column;
+  position: relative;
+}
+
+.letUsTalkHeroHolder {
+  width: 100%;
+  /*! height: 700px; */
+  background: var(--ctaCaseStudiesSectionBg);
+  border-radius: 20px;
+  display: flex;
+  grid-gap: 20px;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.letUsTalkHeroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 50%;
+}
+
+.letUsTalkHeroContainer h1 {
+  font-size: 200px;
+  font-weight: bolder;
+  color: #24806e;
+}
+
+.letUsTalkHeroContainer p {
+  font-size: 30px;
+  color: #24806e;
+}
+
+.letUsTalkForm {
+  width: 600px;
+  margin-top: 100px;
+  position: absolute;
+  right: 150px;
+  background-color: var(--letUsTalkBG);
+  border-radius: 20px;
+  box-shadow: 0 0 60px var(--navHBS);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.letUsTalkForm label {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: var(--clientInfoColor);
+}
+
+.letUsTalkForm input,
+.letUsTalkForm select,
+.letUsTalkForm textarea {
+  border: none;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-bottom: 2px solid #b3b3b3;
+  padding: 10px 10px 10px 0;
+  background-color: transparent;
+  margin-top: 0px;
+  outline: none;
+  margin-right: 20px;
+  color: var(--clientInfoColor);
+  margin-bottom: 20px;
+}
+
+.underContactUsWork {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 100px;
+  width: 40%;
+}
+
+.underContactUsWork1 {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.underContactUsWork2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.underContactUsWork span {
+  font-size: 20px;
+  color: var(--firstDivPColor);
+}
+
+.underContactUsWork label {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--clientInfoColor);
+}
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 600px) {
-  .caseTag{
+  .caseTag {
     font-size: 5px;
   }
-  .navbarDesktopHolder.scrolled{
+
+  .navbarDesktopHolder.scrolled {
     height: 70px;
   }
+
   .navMobileListItem {
 
     width: 100%;
   }
-  .navMobileListItem > a.active {
+
+  .navMobileListItem>a.active {
     width: 50%;
   }
-  .navMobileListItem > a {
+
+  .navMobileListItem>a {
     width: 50%;
   }
+
   .navDeskTopDLModOuter,
   .navMobileDLModOuter {
 
@@ -2309,13 +2496,16 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     width: 80px;
     margin-top: 10px;
   }
-  .whatWedoSection > h1{
+
+  .whatWedoSection>h1 {
     padding-right: 50px;
   }
-  .CaseStudiesSection > h1{
+
+  .CaseStudiesSection>h1 {
     padding-right: 50px;
     margin-left: 0;
   }
+
   h1 {
     font-size: 20px;
   }
@@ -2331,18 +2521,20 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   #prev-btn {
     top: 220px;
   }
-  .wats{
+
+  .wats {
     top: 150px;
   }
-  .fac{
+
+  .fac {
     top: 200px;
   }
-  .insta{
+
+  .insta {
     top: 250px;
   }
-  .theFirstTitle {
 
-  }
+  .theFirstTitle {}
 
   .theSecondTitle {
     font-size: 30px;
@@ -2351,13 +2543,16 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .theThirdTitle {
     font-size: 30px;
   }
-  .questionsContainer{
+
+  .questionsContainer {
     padding: 0px;
   }
-  .ctaCaseStudiesSection{
+
+  .ctaCaseStudiesSection {
     width: 100%;
   }
-  .clientInfo input{
+
+  .clientInfo input {
     margin-right: 0px;
   }
 
@@ -2366,40 +2561,60 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
   }
-  .whatWedoSection{
+
+  .whatWedoSection {
     width: 100%;
   }
-  .CaseStudiesCard > h4 {
+
+  .CaseStudiesCard>h4 {
 
     font-size: 12px;
   }
+
   .whatweDoSideCard {
     top: 0;
     left: 0;
     margin: 0 0 0 20PX;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 20px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
     right: 0;
   }
-  .whatWeDoSlider{
+
+  .whatWeDoSlider {
     left: 20px;
     bottom: 50px;
   }
-  .aboutCardHolder {
 
+  .aboutCardHolder {}
 
+  :root.light-theme {
+    --svgPathAboutFillColor: #f9f9f9;
+    --aboutCardContainerPColor: #828282;
   }
-  :root.light-theme{
-  --svgPathAboutFillColor: #f9f9f9;
-  --aboutCardContainerPColor:#828282;
-  }
-  :root.dark-theme {
 
-  }
+  :root.dark-theme {}
+
   .aboutCardContainer {
-    filter :none;
+    filter: none;
+  }
+  .letUsTalkHeroContainer {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .letUsTalkForm {
+    width: 100%;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+      margin-top: auto;
+    margin-top: 100px;
+  }
+  .letUsTalkHeroContainer h1 {
+    font-size: 100px
   }
 }
 
@@ -2527,20 +2742,39 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .theThirdTitle {
     font-size: 50px;
   }
-  .aboutCardHolder {
 
+  .aboutCardHolder {}
 
-  }
-  :root.light-theme{
+  :root.light-theme {
     --svgPathAboutFillColor: #f9f9f9;
-    --aboutCardContainerPColor:#828282;
-    }
-    :root.dark-theme {
-  
-    }
-    .aboutCardContainer {
-      filter :none;
-    }
+    --aboutCardContainerPColor: #828282;
+  }
+
+  :root.dark-theme {}
+
+  .aboutCardContainer {
+    filter: none;
+  }
+  .letUsTalkHeroContainer {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .letUsTalkForm {
+    width: 100%;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+      margin-top: auto;
+    margin-top: 100px;
+  }
+  .letUsTalkHeroContainer h1 {
+    font-size: 150px
+  }
+  .underContactUsWork{
+    width: 100%;
+  }
 }
 
 
@@ -2631,34 +2865,56 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .theThirdTitle {
     font-size: 70px;
   }
+  .letUsTalkHeroContainer {
+    width: 100%;
+  }
+  .letUsTalkForm {
+    width: 600px;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+      margin-top: auto;
+    margin-top: 100px;
+  }
+  .underContactUsWork{
+    width: 100%;
+  }
 }
+
 @media (max-height: 768px) {
-  .wats{
+  .wats {
     top: 120px;
     left: 40px;
   }
-  .fac{
+
+  .fac {
     top: 120px;
     left: 90px;
   }
-  .insta{
+
+  .insta {
     top: 120px;
     left: 140px;
   }
 }
+
 @media (max-height: 600px) {
-  .wats{
+  .wats {
     top: 120px;
     left: 40px;
   }
-  .fac{
+
+  .fac {
     top: 120px;
     left: 90px;
   }
-  .insta{
+
+  .insta {
     top: 120px;
     left: 140px;
   }
+
   .navDeskTopDLModOuter,
   .navMobileDLModOuter {
     height: 30px;
@@ -2677,18 +2933,21 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .navMobileDLModOuter>.navMobileDLModOuterIcon {
     font-size: 10px;
   }
+
   .navDesktopLogo {
     margin-left: 25px;
     margin-top: 10px;
     margin-right: 0px;
     font-size: 30px;
   }
+
   .navDesktop2 {
     display: flex;
     margin-top: 10px;
     margin-right: 25px;
     margin-left: 0px;
   }
+
   .hamburger {
     display: flex;
     font-size: 20px;
@@ -2697,6 +2956,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     border-radius: 10px;
 
   }
+
   .contactUsButton {
     width: 140px;
     height: 40px;
@@ -2704,6 +2964,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
     justify-content: center;
     align-items: center;
   }
+
   .theSecondTitle {
     font-size: 30px;
   }
@@ -2711,6 +2972,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .theThirdTitle {
     font-size: 30px;
   }
+
   .navbarDesktopHolder.scrolled {
     height: 70px;
   }
@@ -2721,26 +2983,15 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
 
 @media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .letUsTalkForm {
+    right: 80px;
+  }
+  .letUsTalkHeroContainer h1{
+    font-size: 100px;
+  }
+  .letUsTalkHeroContainer{
+    width: 40%;
+  }
 
-
-
-
-
-
-
-
-.slider-container1 {
-  position: relative;
-  width: 80%;
-  height: 50px;
-  background-color: #e0e0e0;
 }
-
-.slider1 {
-  position: absolute;
-  height: 100%;
-  width: 50px; /* Set a fixed width for the slider */
-  background-color: #3498db;
-  cursor: pointer;
-}
-
