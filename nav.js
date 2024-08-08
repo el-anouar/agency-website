@@ -22,3 +22,13 @@ navMobile.addEventListener("click", function (e) {
     });
   }
 });
+document.querySelectorAll(".navMobileListItem a").forEach((link) => {
+  link.addEventListener("click", function (event) {
+    document.querySelectorAll(".navMobileListItem a").forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    // Add 'active' class to the parent of the clicked link
+    this.classList.add("active");
+  });
+});

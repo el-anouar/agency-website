@@ -1150,17 +1150,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Add an event listener to all links
-document.querySelectorAll(".navMobileListItem a").forEach((link) => {
-  link.addEventListener("click", function (event) {
-    // Prevent default action
-    event.preventDefault();
 
-    // Remove 'active' class from all items
-    document.querySelectorAll(".navMobileListItem a").forEach((item) => {
-      item.classList.remove("active");
-    });
-
-    // Add 'active' class to the parent of the clicked link
-    this.classList.add("active");
-  });
-});
