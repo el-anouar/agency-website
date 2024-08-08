@@ -9,19 +9,25 @@ document.addEventListener("scroll", function () {
     if (scrollPosition > 10) {
     } else {
     }
+
     if (
       scrollPosition >
       container1.offsetHeight - navbarDesktopHolder.offsetHeight
     ) {
-      navbarDesktopHolder.classList.add("scrolled");
-      navDesktopLogo.classList.add("scrolled");
-      navDesktop1.classList.add("scrolled");
-      navDesktop2.classList.add("scrolled");
+
+        navbarDesktopHolder.classList.add("scrolled");
+        navDesktopLogo.classList.add("scrolled");
+        navDesktop1.classList.add("scrolled");
+        navDesktop2.classList.add("scrolled");
+
+
     } else {
+
       navbarDesktopHolder.classList.remove("scrolled");
       navDesktopLogo.classList.remove("scrolled");
       navDesktop1.classList.remove("scrolled");
       navDesktop2.classList.remove("scrolled");
+
     }
   
     const navMobileLogo = document.querySelector(".navMobileLogo");

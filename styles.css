@@ -1459,9 +1459,18 @@ button:hover {
   background-color: var(--navBarHolderScrolledBg);
   border-radius: 0;
   box-shadow: 0 0 10px var(--navHBS);
+  animation: animateNav 0.5s ease-in forwards;
 
 }
-
+@keyframes animateNav {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 0px;
+  }
+  
+}
 .navDesktop1 {
   flex: 1;
   display: flex;
