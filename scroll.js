@@ -12,10 +12,11 @@ document.addEventListener("scroll", function () {
 
     if (
       scrollPosition >
-      container1.offsetHeight - navbarDesktopHolder.offsetHeight
+      container1.offsetHeight -100
     ) {
-
+        navbarDesktopHolder.classList.remove("notScrolled");
         navbarDesktopHolder.classList.add("scrolled");
+        
         navDesktopLogo.classList.add("scrolled");
         navDesktop1.classList.add("scrolled");
         navDesktop2.classList.add("scrolled");
@@ -24,6 +25,7 @@ document.addEventListener("scroll", function () {
     } else {
 
       navbarDesktopHolder.classList.remove("scrolled");
+      navbarDesktopHolder.classList.add("notScrolled");
       navDesktopLogo.classList.remove("scrolled");
       navDesktop1.classList.remove("scrolled");
       navDesktop2.classList.remove("scrolled");

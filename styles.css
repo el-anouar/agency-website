@@ -1442,6 +1442,7 @@ button:hover {
 }
 
 
+
 .navbarDesktopHolder {
   display: flex;
   height: 100px;
@@ -1453,8 +1454,8 @@ button:hover {
   z-index: 2;
   border-radius: 0 0 40px 40px;
   max-width: var(--default-max-width);
-}
 
+}
 .navbarDesktopHolder.scrolled {
   background-color: var(--navBarHolderScrolledBg);
   border-radius: 0;
@@ -1462,7 +1463,20 @@ button:hover {
   animation: animateNav 0.5s ease-in forwards;
 
 }
+.navbarDesktopHolder.notScrolled{
+
+animation: animateNavN 0.5s ease-in forwards;
+}
 @keyframes animateNav {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 0px;
+  }
+  
+}
+@keyframes animateNavN {
   0% {
     top: -100px;
   }
