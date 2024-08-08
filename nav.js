@@ -22,13 +22,31 @@ navMobile.addEventListener("click", function (e) {
     });
   }
 });
-document.querySelectorAll(".navMobileListItem a").forEach((link) => {
-  link.addEventListener("click", function (event) {
-    document.querySelectorAll(".navMobileListItem a").forEach((item) => {
-      item.classList.remove("active");
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".navMobileListItem a");
 
-    // Add 'active' class to the parent of the clicked link
-    this.classList.add("active");
+  // Function to set the active link based on current URL
+  function setActiveLink() {
+    const currentURL = window.location.href;
+    navLinks.forEach((link) => {
+      if (currentURL.includes(link.getAttribute("href"))) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  // Set the active link on page load
+  setActiveLink();
+
+  // Add click event to set the active link on click
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      navLinks.forEach((item) => {
+        item.classList.remove("active");
+      });
+      this.classList.add("active");
+    });
   });
 });
