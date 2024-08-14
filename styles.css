@@ -68,6 +68,7 @@
   --navMLIaColor: #ffffff;
   --navHBS: rgba(130, 130, 130, 0.385);
   --letUsTalkBG: white;
+  --blogSearchBg: #ffffff;
 }
 
 :root.dark-theme {
@@ -141,6 +142,8 @@
   --navMLIaColor: #1f1f1f;
   --navHBS: transparent;
   --letUsTalkBG: #1c1c1c;
+
+  --blogSearchBg: #1f1f1f;
 }
 
 :root {
@@ -541,7 +544,11 @@ p {
   cursor: pointer;
   width: fit-content;
 }
-
+.buttonBorderTrans:hover{
+  background-color: #ffbf00;
+  color: white;
+  border: 2px solid transparent;
+}
 .whatWeDoSliderCards {
   display: flex;
   gap: 20px;
@@ -637,7 +644,7 @@ p {
 }
 
 .CaseStudiesCard a {
-  height: 100%;
+  height: calc(100% - 80px);
   width: 100%;
   border-radius: 20px;
   display: flex;
@@ -662,17 +669,17 @@ p {
 
 .CaseStudiesCard h4 {
   color: var(--caseStudiesCardh4Color);
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
+  height: 80px;
   display: flex;
+  flex-direction: column;
 }
 
 .casetagHolder {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 
@@ -684,7 +691,11 @@ p {
   font-size: 10px;
   padding: 5px 10px 5px 10px;
 }
-
+.caseTag:hover{
+  background-color: #ffbf00;
+  color: white;
+  border: 2px solid transparent;
+}
 .testimonialSection {
   width: 100%;
 }
@@ -2315,7 +2326,140 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   flex-direction: column;
   position: relative;
 }
+.blogSection{
+  width: 100%;
+  display: flex;
+  border-radius: 20px;
+  padding: 20px;
+  padding-top: 20px;
+  flex-direction: column;
+  position: relative;
+}
+.blogBanner{
+  background: var(--ctaCaseStudiesSectionBg);
+  width: 100%;
+  height: 400px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.blogBanner h1{
 
+  font-size: 100px;
+  font-weight: bolder;
+  color: var(--ctaCaseStudiesSectionContainerh1Color);
+  margin-bottom: 20px;
+}
+.blogBanner p{
+  color: var(--ctaCaseStudiesSectionContainerh1Color);
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.searchContainer{
+  display: flex;
+  align-items: center;
+  background-color: var(--blogSearchBg);
+  border-radius: 50px;
+  padding: 0px 0px 0px 20px;
+  margin-top: 20px;
+
+}
+.searchContainer input{
+  border: none;
+  padding: 10px 0px 10px 0;
+  background-color: transparent;
+  margin-top: 0px;
+  outline: none;
+  color: var(--clientInfoColor);
+  width: 500px;
+}
+.searchContainer label{
+
+  padding: 10px 20px;
+  border: 2px solid var(--buttonBorderTransB);
+  border-radius: 20px;
+  color: var(--buttonBorderTransColor);
+  cursor: pointer;
+  width: fit-content;
+}
+.searchContainer label:hover{
+  background-color: #ffbf00;
+  color: white;
+  border: 2px solid transparent;
+}
+.blogTags{
+  display: flex;
+flex-wrap: wrap;
+gap: 10px;
+padding: 20px;
+justify-content: center;
+}
+.blogTags input[type="checkbox"] {
+  display: none;
+}
+.blogTags label {
+  padding: 10px 20px;
+  border: 2px solid var(--buttonBorderTransB);
+  border-radius: 20px;
+  color: var(--buttonBorderTransColor);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.blogTags input[type="checkbox"]:checked+label {
+  background-color: var(--checkBoxCheckedBg);
+  color: var(--checkBoxCheckedColor);
+  border: 2px solid var(--checkBoxCheckedB);
+}
+.blogsSection {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  position: relative;
+  width: 100%;
+}
+.blogsContainer {
+  overflow: hidden;
+  display: flex;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  
+}
+.blogsCards {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+}
+.blogCard {
+  height: auto;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.blogCard a{
+  height: calc(100% - 80px);
+}
+.blogCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.blogCard h4 {
+  color: var(--caseStudiesCardh4Color);
+
+
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+}
 .letUsTalkHeroHolder {
   width: 100%;
   /*! height: 700px; */
@@ -2696,6 +2840,9 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   .letUsTalkHeroContainer p {
     font-size: 20px;
   }
+  .searchContainer input {
+    width: 190px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 768px) {
@@ -2853,6 +3000,9 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   }
   .underContactUsWork{
     width: 100%;
+  }
+  .searchContainer input {
+    width: 400px;
   }
 }
 
