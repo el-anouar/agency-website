@@ -684,7 +684,7 @@ p {
 }
 
 .caseTag {
-  border: 1px solid var(--buttonBorderTransB);
+  border: 2px solid var(--buttonBorderTransB);
   border-radius: 20px;
   justify-content: center;
   align-items: center;
@@ -2575,7 +2575,7 @@ justify-content: center;
 
 @media (max-width: 600px) {
   .caseTag {
-    font-size: 5px;
+    font-size: 10px;
   }
 
   .navbarDesktopHolder.scrolled {
