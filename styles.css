@@ -2344,6 +2344,7 @@ https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-genera
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
 }
 .blogBanner h1{
 
@@ -2842,6 +2843,12 @@ justify-content: center;
   }
   .searchContainer input {
     width: 190px;
+  }
+  .blogBanner{
+    margin-top: 70px;
+  }
+  .letUsTalkHeroHolder {
+    margin-top: 70px;
   }
 }
 
